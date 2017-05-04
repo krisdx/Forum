@@ -1,0 +1,15 @@
+<th:block th:fragment="like-dislike-buttons(target)">
+    <button th:id="${target} + '-like-btn-' + *{id}" class="btn like-btn" type="button"
+            th:classappend="*{isLiked} == true ? 'liked'">
+        <i class="fa fa-thumbs-up"></i>
+        <span th:id="${target} + '-likes-count-' + *{id}" th:text="*{likesCount}">0</span>
+        <!--<span> Likes</span>-->
+    </button>
+
+    <button th:id="${target} + '-dislike-btn-' + *{id}" class="btn dislike-btn" type="button"
+            th:classappend="*{isLiked} == false ? 'disliked'">
+        <i class="fa fa-thumbs-down"></i>
+        <span th:id="${target} + '-dislikes-count-' + *{id}" th:text="*{dislikesCount}">0</span>
+        <!--<span> Dislikes</span>-->
+    </button>
+</th:block>

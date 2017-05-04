@@ -1,0 +1,5 @@
+<th:block th:fragment="edited-label(element)">
+        <span th:id="'has-' + element + '-been-edited-' + *{id}"
+              th:style="*{!hasBeenEdited} ? 'display: none'"
+              th:text="#{label.edited}" class="edited"></span>
+</th:block>

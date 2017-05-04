@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html th:lang="#{lang}" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="#{error.somethingWentWrong}">Something went wrong</title>
+    <link th:replace="fragments/imports/bootstrap-jquery-import">
+    <link th:replace="fragments/imports/base-css-import">
+    <link type="text/css" rel="stylesheet" th:href="@{/css/errors/error.css}">
+</head>
+<body>
+    <header th:replace="fragments/base/header"></header>
+
+    <div class="container">
+        <h1 th:text="#{error.somethingWentWrong} + ' :('">Something went wrong :(</h1>
+    </div>
+
+    <footer th:replace="fragments/base/footer"></footer>
+</body>
+</html>

@@ -1,0 +1,81 @@
+.container {
+    margin-top: 20px;
+    padding: 30px;
+    border: 2px solid #5CB85C;
+}
+
+.left-padding {
+    padding-left: 25px;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.info {
+    margin-top: 50px;
+}
+
+.questions-info, .comments-info {
+    border: 2px solid #5CB85C;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px 5px 10px;
+    text-align: center;
+    font-size: 1.4em;
+}
+
+.fa-thumbs-up {
+    color: #5CB85C;
+}
+
+.fa-thumbs-down {
+    color: #D9534F;
+}
+
+.questions-info:hover {
+    background-color: #3c763d;;
+}
+
+#edit-profile-btn {
+    float: right;
+}
+
+.fa-pencil {
+    border: 1px solid #5CB85C;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.empty-bio-message {
+    font-style: italic;
+    color: lightgray;
+}
+
+#edit-bio-submit-btn {
+    background-color: #5CB85C;
+}
+
+#edit-bio-cancel-btn {
+    background-color: #D9534F;
+}
+
+#edit-bio-submit-btn, #edit-bio-cancel-btn {
+    margin-left: 5px;
+    display: none;
+}
+
+/*Common Styles*/
+button {
+    background: inherit;
+    border: none;
+    color: white;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+hr {
+    background-color: #5CB85C;
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html th:lang="#{lang}" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="#{profile.user} + ' - ' + ${userViewModel.getUsername()}">View Profile</title>
+    <link th:replace="fragments/imports/bootstrap-jquery-import">
+    <link th:replace="fragments/imports/base-css-import">
+    <link type="text/css" rel="stylesheet" th:href="@{/css/users/view-profile.css}">
+    <script type="text/javascript" th:src="@{/js/users/edit-bio-functionality.js}"></script>
+</head>
+<body>
+    <header th:replace="fragments/base/header"></header>
+
+    <div class="container">
+        <th:block th:object="${userViewModel}" th:with="maleGender=${'m'}">
+            <div class="row">
+                <div class="col-sm-2">
+                    <i class="fa fa-user-circle fa-5x"
+                       th:style="${#strings.equals(userViewModel.getGender(), maleGender) ? 'color: royalblue' : 'color: #DC5EDC'}"></i>
+                </div>
+
+                <div class="col-sm-10">
+                    <div class="left-padding">
+                        <i class="fa fa-lg fa-user" th:style="${#strings.equals(userViewModel.getGender(), maleGender) ? 'color: royalblue;' : 'color: #DC5EDC'}"></i>
+                        <span th:text="*{username} + '(' + *{fullName} + ')'"></span>
+                    </div>
+                    <div class="left-padding">
+                        <i class="fa fa-lg" th:classappend="${#strings.equals(userViewModel.getGender(), maleGender) ? 'fa-male' : 'fa-female'}"
+                            th:style="${#strings.equals(userViewModel.getGender(), maleGender) ? 'color: royalblue' : 'color: #DC5EDC'}"></i>
+                        <span th:if="${#strings.equals(userViewModel.getGender(), maleGender)}" th:text="#{label.male}"></span>
+                        <span th:if="${#strings.equals(userViewModel.getGender(), maleGender) == false}" th:text="#{label.female}"></span>
+                    </div>
+                    <div class="left-padding">
+                        <i class="fa  fa-lg fa-envelope-o" th:style="${#strings.equals(userViewModel.getGender(), maleGender) ? 'color: royalblue' : 'color: #DC5EDC'}"></i>
+                        <span th:text="*{email}"></span>
+                    </div>
+                    <div class="left-padding">
+                        <i class="fa  fa-lg fa-calendar-o" th:style="${#strings.equals(userViewModel.getGender(), maleGender) ? 'color: royalblue' : 'color: #DC5EDC'}"></i>
+                        <label th:text="#{profile.registerOn} + ': '">Registered On</label>
+                        <i th:text="*{registerDate}">27/04/2017</i>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <div>
+                <i class="fa fa-info"></i>
+                <label th:text="#{profile.bio}">Bio</label>
+                <button id="edit-bio-btn" type="button" class="edit-btn" >
+                    <span class="fa fa-pencil"></span>
+                </button>
+
+                <button id="edit-bio-submit-btn" th:user-id="*{id}" type="button" class="edit-submit-btn"
+                        th:text="#{label.edit}"></button>
+                <button id="edit-bio-cancel-btn" th:user-id="*{id}" type="button" class="edit-cancel-btn"
+                        th:text="#{label.cancel}"></button>
+                <br>
+
+                <!--This will be shown, when there is no bio-->
+                <p th:id="bio-text" th:if="*{bio == null}" th:empty-bio-message="#{profile.noBio}" class="empty-bio-message"
+                   th:is-bio-empty="true" th:placeholder="#{profile.enterBio} + '...'" th:text="#{profile.noBio}"></p>
+
+                <!--This will be shown, when there is a bio-->
+                <p th:id="bio-text" th:if="*{bio != null}" th:empty-bio-message="#{profile.noBio}"
+                   th:is-bio-empty="false" th:placeholder="#{profile.enterBio} + '...'" th:text="*{bio}"></p>
+            </div>
+
+            <hr>
+
+            <div class="info">
+                <div class="questions-info">
+                    <i class="fa fa-question"></i>
+                    <strong><i th:text="*{questionsPostedCount}"></i></strong>
+                    <span th:text="' ' + #{*{questionsPostedCount == 1 ? 'profile.questionPostedCount' : 'profile.questionsPostedCount'}}"></span>
+                </div>
+                <div class="questions-info">
+                    <i class="fa fa-comment"></i>
+                    <strong><i th:text="*{commentsPostedCount}"></i></strong>
+                    <span th:text="' ' + #{*{commentsPostedCount == 1 ? 'profile.commentPostedCount' : 'profile.commentsPostedCount'}}"></span>
+                </div>
+                <div class="questions-info">
+                    <i class="fa fa-thumbs-up"></i>
+                    <strong><i th:text="*{totalLikesReceived}"></i></strong>
+                    <span th:text="' ' + #{*{totalLikesReceived == 1 ? 'profile.totalLikeReceived' : 'profile.totalLikesReceived'}}"></span>
+                </div>
+                <div class="questions-info">
+                    <i class="fa fa-thumbs-down"></i>
+                    <strong><i th:text="*{totalDislikesReceived}"></i></strong>
+                    <span th:text="' ' + #{*{totalDislikesReceived == 1 ? 'profile.totalDislikeReceived' : 'profile.totalDislikesReceived'}}"></span>
+                </div>
+            </div>
+        </th:block>
+    </div>
+
+    <footer th:replace="fragments/base/footer"></footer>
+</body>
+</html>

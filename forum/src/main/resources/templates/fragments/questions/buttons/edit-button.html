@@ -1,0 +1,5 @@
+<th:block th:fragment="edit-button(target)">
+    <button th:id="'edit-' + ${target} + '-btn-' + *{id}" type="button" class="edit-btn">
+        <span class="fa fa-pencil"></span>
+    </button>
+</th:block>

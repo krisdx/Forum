@@ -1,0 +1,15 @@
+<th:block th:fragment="meta-info(target)">
+    <a th:href="@{/users/} + *{username}">
+        <span class="fa fa-user"></span>
+        <span th:text="*{username}"></span>
+    </a>
+
+    <i class="fa fa-calendar">
+        <span th:id="${target} + '-date-' + *{id}" th:text="*{date}">19/04/2017</span>
+    </i>
+
+    <a th:href="@{/categories/} + *{category}">
+        <span class="fa fa-folder"></span>
+        <span th:text="*{category}"></span>
+    </a>
+</th:block>

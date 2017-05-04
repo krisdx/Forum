@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html th:lang="#{lang}" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${title}"></title>
+    <link th:replace="fragments/imports/bootstrap-jquery-import">
+    <link th:replace="fragments/imports/base-css-import">
+    <link type="text/css" rel="stylesheet" th:href="@{/css/questions/mini-questions.css}">
+    <script th:src="@{/js/question/like-dislike-functionality.js}"></script>
+</head>
+<body>
+    <header th:replace="fragments/base/header"></header>
+
+    <div class="container">
+        <h2 id="page-title" th:text="${title}"></h2>
+        <div th:replace="fragments/questions/mini-question-models"></div>
+    </div>
+
+    <footer th:replace="fragments/base/footer"></footer>
+</body>
+</html>

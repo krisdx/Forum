@@ -1,0 +1,34 @@
+<div th:id="'question-' + *{id}" class="question bg-inverse" th:question-id="*{id}">
+    <div>
+        <div id="question-title-wrapper">
+            <a id="question-title" th:href="@{/questions/} + *{id}" th:text="*{title}"></a>
+        </div>
+
+        <th:block th:insert="fragments/questions/edited-label :: edited-label(question)"></th:block>
+
+        <th:block th:if="*{#authentication.getName() == username}">
+            <a id="delete-question-btn" type="button" th:href="@{/questions/all}">
+                <span class="fa fa-times"></span>
+            </a>
+
+            <th:block th:insert="fragments/questions/buttons/edit-button :: edit-button (question)"></th:block>
+        </th:block>
+    </div>
+
+    <th:block th:insert="fragments/questions/question-meta-info :: meta-info(question)"></th:block>
+
+    <th:block th:insert="fragments/questions/buttons/edit-submit-button :: edit-submit-button(question)"></th:block>
+    <th:block th:insert="fragments/questions/buttons/edit-cancel-button :: edit-cancel-button(question)"></th:block>
+
+    <section id="tags-section">
+        <a th:href="@{/tags/} + ${tag.getTag()}" th:each="tag : *{tags}">
+            <button type="submit" class="tag" th:text="${tag.getTag()}"></button>
+        </a>
+    </section>
+
+    <hr>
+    <p th:id="'question-text-' + *{id}" class="italic" th:text="*{question}">Question</p>
+    <hr>
+
+    <th:block th:insert="fragments/questions/buttons/like-dislike-buttons :: like-dislike-buttons(question)"></th:block>
+</div>

@@ -1,0 +1,8 @@
+h1 {
+    font-weight: bold;
+    margin-top: 20px;
+    text-align: center;
+    border-radius: 5px;
+    padding: 10px;
+    border: 2px solid #5CB85C;
+}

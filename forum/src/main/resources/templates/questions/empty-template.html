@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html th:lang="#{lang}" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${message}"></title>
+    <link th:replace="fragments/imports/bootstrap-jquery-import">
+    <link th:replace="fragments/imports/base-css-import">
+    <link rel="stylesheet" th:href="@{/css/questions/empty-template.css}">
+</head>
+<body>
+    <header th:replace="fragments/base/header"></header>
+
+    <div class="container">
+        <h2 th:text="${message}"></h2>
+    </div>
+
+    <footer th:replace="fragments/base/footer"></footer>
+</body>
+</html>

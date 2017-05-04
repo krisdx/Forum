@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html  th:lang="#{lang}" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="#{label.unauthorized}">Unauthorized</title>
+    <link th:replace="fragments/bootstrap-jquery-import">
+    <link rel="stylesheet" th:href="@{/css/navigation-bar.css}"/>
+</head>
+<body>
+    <nav th:replace="fragments/navigation-bar"></nav>
+    <h1>No Access</h1>
+</body>
+</html>

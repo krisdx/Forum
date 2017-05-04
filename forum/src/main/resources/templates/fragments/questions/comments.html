@@ -1,0 +1,33 @@
+<section id="comments-section">
+    <div id="comments-count-field">
+        <span id="comments-count" th:text="*{comments.size()}"></span>
+        <span id="comments-count-text" th:text="*{comments.size() == 1 ? ' Comment' : ' Comments'}"></span>
+    </div>
+
+    <div th:id="'comment-' + *{id}" th:comment-id="*{id}" class="comment" th:each="commentViewModel : *{comments}"
+         th:object="${commentViewModel}">
+        <i class="fa fa-user"></i>
+        <span th:text="*{username}">Username</span>
+
+        <i class="fa fa-calendar"></i>
+        <span th:id="'comment-date-' + *{id}" th:text="*{date}">29/03/2017</span>
+
+        <span th:id="'has-comment-been-edited-' + *{id}" th:style="*{!hasBeenEdited} ? 'display: none'" th:text="#{comment.edited}" class="edited"></span>
+
+        <th:block th:insert="fragments/questions/buttons/edit-submit-button :: edit-submit-button(comment)"></th:block>
+        <th:block th:insert="fragments/questions/buttons/edit-cancel-button :: edit-cancel-button(comment)"></th:block>
+
+        <th:block th:if="*{#authentication.getName() == username}">
+            <button th:id="'delete-comment-btn-' + *{id}" type="button" class="delete-btn">
+                <i class="fa fa-times"></i>
+            </button>
+
+            <th:block th:insert="fragments/questions/buttons/edit-button :: edit-button(comment)"></th:block>
+        </th:block>
+
+        <br>
+        <div th:id="'comment-text-' + *{id}" class="italic" th:text="*{comment}"></div>
+
+        <th:block th:insert="fragments/questions/buttons/like-dislike-buttons :: like-dislike-buttons(comment)"></th:block>
+    </div>
+</section>

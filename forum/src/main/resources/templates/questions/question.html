@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html th:lang="#{lang}" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${questionViewModel.getTitle()}">Question Title</title>
+    <link th:replace="fragments/imports/bootstrap-jquery-import">
+    <link th:replace="fragments/imports/base-css-import">
+    <link type="text/css" rel="stylesheet" th:href="@{/css/questions/question.css}">
+    <link th:replace="fragments/imports/question-functionality-import">
+</head>
+<body>
+    <header th:replace="fragments/base/header"></header>
+    
+    <!--TODO: Pagination-->
+    <div class="container">
+        <div th:object="${questionViewModel}">
+            <div th:replace="fragments/questions/question"></div>
+
+            <section th:replace="fragments/questions/comments"></section>
+
+            <th:block sec:authorize="hasRole('USER')">
+                <form id="add-comment-form" class="bg-inverse">
+                    <input id="input-comment-field" type="text" th:placeholder="#{question.addComment} + '...'">
+                    <button id="add-comment-submit-btn" type="button">
+                        <i class="fa fa-comment fa-2x"></i>
+                    </button>
+                </form>
+            </th:block>
+        </div>
+    </div>
+
+    <footer th:replace="fragments/base/footer"></footer>
+</body>
+</html>

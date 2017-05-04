@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html th:lang="#{lang}" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="#{label.login}">Login</title>
+    <link th:replace="fragments/imports/bootstrap-jquery-import">
+    <link th:replace="fragments/imports/base-css-import">
+    <link type="text/css" rel="stylesheet" th:href="@{/css/login-register/login.css}">
+</head>
+<body>
+    <header th:replace="fragments/base/header"></header>
+
+    <div class="container">
+        <div th:if="${loginError != null}" class="alert alert-danger alert-dismissable fade show" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <strong th:text="${loginError}"></strong>
+        </div>
+
+        <form id="login-form" method="post">
+            <div class="form-group row">
+                <div class="col-sm-1">
+                    <label for="username" class="col-form-label">
+                        <i class="fa fa-user fa-2x"></i>
+                    </label>
+                </div>
+                <div class="col-sm-11">
+                    <input type="text" id="username" name="username" class="form-control"
+                           th:placeholder="#{label.username} + '...'" required>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-sm-1">
+                    <label for="password" class="col-form-label">
+                        <i class="fa fa-lock fa-2x"></i>
+                    </label>
+                </div>
+                <div class="col-sm-11">
+                    <input type="password" id="password" name="password" class="form-control"
+                           th:placeholder="#{label.password} + '...'" required>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-check col-sm-5">
+                    <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input" name="remember-me">
+                        <span th:text="#{label.rememberMe}">Remember Me</span>
+                    </label>
+                </div>
+                <div class="center-align col-sm-7">
+                    <a th:href="@{/register}" th:text="#{label.notRegistered}">Not Registered?</a>
+                </div>
+            </div>
+
+            <div class="center-align">
+                <button id="login-btn" type="submit" class="btn btn-lg btn-outline-success"
+                        th:text="#{label.login}">Login
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <footer th:replace="fragments/base/footer"></footer>
+</body>
+</html>

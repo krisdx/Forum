@@ -1,0 +1,12 @@
+<div th:id="'question-' + *{id}" class="question" th:each="questionViewMiniModel : ${questionViewMiniModels}"
+     th:object="${questionViewMiniModel}">
+    <h3>
+        <a th:href="@{/questions/} + ${questionViewMiniModel.getId()}" th:text="*{title}"></a>
+    </h3>
+
+    <th:block th:insert="fragments/questions/question-meta-info :: meta-info('question')"></th:block>
+
+    <hr>
+
+    <th:block th:insert="fragments/questions/buttons/like-dislike-buttons :: like-dislike-buttons('question')"></th:block>
+</div>

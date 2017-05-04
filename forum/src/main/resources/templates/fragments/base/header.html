@@ -1,0 +1,48 @@
+<header>
+    <div class="container-fluid">
+        <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+            <a th:href="@{/}" class="brand" >
+                <i class="fa fa-comments-o fa-lg"></i>
+                <span th:text="#{navbar.brand}"></span>
+            </a>
+
+            <th:block sec:authorize="isAuthenticated()">
+                <a class="btn btn-outline-success" th:text="#{label.addQuestion}" th:href="@{/questions/add}"></a>
+            </th:block>
+
+            <div class="navbar-toggler-right">
+                <div sec:authorize="!isAnonymous()">
+                    <div id="navbarDropdownMenuLink" class="nav-link dropdown-toggle bg-inverse navbar-inverse"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-user"></i>
+                        <span th:text="${#authentication.getName()}"></span>
+                    </div>
+                    <div class="dropdown-menu bg-inverse navbar-toggler-right dropdown-menu-right dropdown-li"
+                          aria-labelledby="navbarDropdownMenuLink">
+                        <div class="center-align">
+                            <a class="btn btn-outline-success dropdown-li" name="lang"
+                               th:href="@{/lang/bg?uri=} + ${#httpServletRequest.requestURI}"
+                               th:if="${#locale.getLanguage() == 'en'}">BG
+                            </a>
+                            <a class="btn btn-outline-success" name="lang"
+                               th:href="@{/lang/en?uri=} + ${#httpServletRequest.requestURI}"
+                               th:if="${#locale.getLanguage() == 'bg'}">EN
+                            </a>
+                        </div>
+
+                        <hr>
+
+                        <a class="dropdown-item bg-inverse" th:href="@{/users/} + ${#authentication.getName()}" th:text="#{navbar.profile}">Settings</a>
+                        <a class="dropdown-item bg-inverse" th:href="@{/logout}" th:text="#{navbar.logout}">Logout</a>
+                    </div>
+                </div>
+
+                <form sec:authorize="isAnonymous()" method="get" th:action="@{/login}">
+                    <button class="btn btn-outline-success" type="submit"
+                            th:text="#{label.login}">Login
+                    </button>
+                </form>
+            </div>
+        </nav>
+    </div>
+</header>

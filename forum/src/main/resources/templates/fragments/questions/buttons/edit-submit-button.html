@@ -1,0 +1,4 @@
+<th:block th:fragment="edit-submit-button(target)">
+    <button th:id="'edit-' + ${target} + '-submit-btn-' + *{id}" type="button" class="edit-submit-btn"
+            th:text="#{label.edit}" style="display: none"></button>
+</th:block>

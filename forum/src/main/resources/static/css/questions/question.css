@@ -1,0 +1,167 @@
+/*Question Styles*/
+.question {
+    color: white;
+    font-size: 22px;
+    border: 2px solid #5CB85C;
+    border-radius: 5px 5px 5px 0;
+    width: 100%;
+    padding: 10px;
+    word-wrap: break-word;
+}
+
+#question-title-wrapper {
+    width: 85%;
+    display: inline;
+}
+
+#question-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    word-wrap: break-word;
+}
+
+#question-text {
+    padding-left: 10px;
+}
+
+/*Question Like & Dislike Button Styles*/
+.like {
+    background-color: #5CB85C;
+}
+
+.dislike {
+    background-color: #D9534F;
+}
+
+/*Comment Styles*/
+.comment {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #5CB85C;
+    border-radius: 5px;
+    word-wrap: break-word;
+}
+
+#comments-count-field {
+    padding: 15px 10px 5px;
+    font-size: 20px;
+}
+
+/*Add Comment Styles*/
+#add-comment {
+    border: 2px solid #5CB85C;
+    background-color: #292B2C;
+    border-top: none;
+    margin-left: 15px;
+    color: white;
+    width: 555px;
+}
+
+#input-comment-field {
+    width: 90%;
+    height: 40px;
+    color: white;
+    background-color: #292B2C;
+    border: 2px solid #5CB85C;
+    border-radius: 5px;
+    margin-top: 20px;
+    padding-left: 5px;
+    font-size: 18px;
+}
+
+/*Edit Button Styles*/
+#edit-question-btn, .edit-btn {
+    float: right;
+}
+
+#edit-question-submit-btn, .edit-submit-btn {
+    background-color: #5CB85C;
+    color: white;
+}
+
+#edit-question-cancel-btn, .edit-cancel-btn {
+    background-color: #D9534F;
+    color: white;
+}
+
+#edit-question-submit-btn, #edit-question-cancel-btn,
+.edit-submit-btn, .edit-cancel-btn {
+    margin-left: 10px;
+}
+
+.edited {
+    border: 1px solid #5CB85C;
+    border-radius: 5px;
+    padding: 3px;
+    margin-left: 5px;
+}
+
+/*Delete Button*/
+#delete-question-btn, .delete-btn {
+    float: right;
+}
+
+/*Like & Dislike Button Styles*/
+.liked {
+    background-color: #5CB85C;
+}
+
+.disliked {
+    background-color: #D9534F;
+}
+
+/*Tags*/
+#tags-section {
+    margin: 20px 0 10px 0;
+}
+
+.tag {
+    border: 1px solid #5CB85C;
+    border-radius: 5px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.tag:hover {
+    cursor: pointer;
+    background-color: #5CB85C;
+}
+
+/*Icon Styles*/
+.fa-user, .fa-calendar, .fa-folder {
+    padding-left: 10px;
+    padding-right: 2px;
+}
+
+/*Common Styles*/
+button, a {
+    border: none;
+    color: white;
+    background: #292B2C;
+}
+
+a:hover {
+    color: #5CB85C;
+    text-decoration: none;
+}
+
+a:focus {
+    color: white;
+    text-decoration: none;
+    border: none;
+}
+
+button:hover, a:hover {
+    cursor: pointer;
+}
+
+hr {
+    background-color: #5CB85C;
+}
+
+/*Helper Classes*/
+.italic {
+    padding: 10px;
+    font-style: italic;
+}

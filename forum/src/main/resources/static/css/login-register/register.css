@@ -1,0 +1,40 @@
+#register-from {
+    border: 2px solid #5CB85C;
+    border-radius: 10px;
+    padding: 50px 100px;
+    margin-top: 50px;
+}
+
+.gender-label {
+    font-size: 35px;
+}
+
+.fa-female {
+    color: #DC5EDC;
+}
+
+.fa-male {
+    color: #025FAF;
+}
+
+#email-error-field, #username-error-field, #password-error-field {
+    display: none;
+}
+
+.center-align {
+    text-align: center;
+}
+
+.alert {
+    background-color: #D9534F;
+    color: white;
+    border: none;
+    margin-top: 20px;
+}
+
+
+#register-btn {
+    width: 350px;
+    margin-top: 5px;
+    font-size: 25px;
+}

@@ -1,0 +1,37 @@
+#login-form {
+    border: 2px solid #5CB85C;
+    border-radius: 10px;
+    padding: 50px 100px;
+    margin-top: 50px;
+}
+
+.center-align {
+    text-align: center;
+}
+
+.alert {
+    margin-top: 20px;
+}
+
+#login-btn {
+    margin-top: 20px;
+    font-size: 22px;
+    width: 60%;
+}
+
+button, a {
+    border: none;
+    color: white;
+    background: #292B2C;
+}
+
+a:hover {
+    color: #5CB85C;
+    text-decoration: none;
+}
+
+a:focus {
+    color: white;
+    text-decoration: none;
+    border: none;
+}

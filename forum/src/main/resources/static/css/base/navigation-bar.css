@@ -1,0 +1,33 @@
+.form-inline, #navbarDropdownMenuLink {
+    display: inline;
+}
+
+#navbarDropdownMenuLink {
+    cursor: pointer;
+}
+
+#navbarDropdownMenuLink, .dropdown-item {
+    color: white;
+}
+
+a {
+    color: white;
+}
+
+a:hover {
+    color: #5CB85C;
+    text-decoration: none;
+}
+
+.btn {
+    margin: 0 auto;
+}
+
+.dropdown-item:hover {
+    color: #5CB85C;
+}
+
+/*Helper Classes*/
+.center-align {
+    text-align: center;
+}

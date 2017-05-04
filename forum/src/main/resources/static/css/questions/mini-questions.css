@@ -1,0 +1,65 @@
+.container {
+    margin-top: 20px;
+}
+
+/*Title Styles*/
+#page-title {
+    border: 1px solid #5CB85C;
+    font-weight: bold;
+    padding: 10px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 2.8em;
+}
+
+/*Question Styles*/
+.question {
+    color: white;
+    font-size: 22px;
+    border: 2px solid #5CB85C;
+    border-radius: 5px;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.question h3 {
+    font-size: 1.5em;
+    font-weight: bold;
+    word-wrap: break-word;
+}
+
+/*Like & Dislike Buttons*/
+.liked {
+    background-color: #5CB85C;
+}
+
+.disliked{
+    background-color: #D9534F;
+}
+
+/*Common Styles*/
+button, a {
+    border: none;
+    color: white;
+    background: #292B2C;
+}
+
+a:hover {
+    color: #5CB85C;
+    text-decoration: none;
+}
+
+a:focus {
+    color: white;
+    text-decoration: none;
+    border: none;
+}
+
+button:hover, a:hover {
+    cursor: pointer;
+}
+
+hr {
+    background-color: #5CB85C;
+}
